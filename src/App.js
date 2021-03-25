@@ -6,17 +6,16 @@ import AppRoutes from './routes';
 function App() {
   return (
     <>
-      <BrowserRouter>
-    <Header/>
-    <div className=' container background'>
-  <div className='center'>
-    <AppRoutes/>
-  </div>
-
-    </div>
+        <BrowserRouter>
+            <Header />
+          <div className=" container background">
+      <div className="center">
+            <AppRoutes />
+          </div>
+        </div>
       </BrowserRouter>
     </>
-    );
+  );
 }
 
 export default App;

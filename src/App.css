@@ -23,6 +23,7 @@
 width: 100%;
 }
 .center{
+  height: 300px;
  display: flex;
   justify-content: center;
   align-items: center;

@@ -15,17 +15,13 @@ function Header() {
       </li>
       
       <li className="nav-item dropdown ">
-        <a className="nav-link dropdown-toggle " href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+        <a className="nav-link dropdown-toggle " href="/" id="dropdown08" data-toggle="dropdown"  aria-expanded="false">Menu</a>
         <div className="divHeader dropdown-menu headerBg dropdown-menu-lg-left" aria-labelledby="dropdown08">
         <NavLink className='HeaderLink' activeClassName='HeaderLinkActive' to='/' end> Home</NavLink>
         <br/>
         <NavLink className='HeaderLink' activeClassName='HeaderLinkActive' to='/livros' end> Livros</NavLink>
         <br/>
-        <NavLink className='HeaderLink' activeClassName='HeaderLinkActive' to='/generos' end> Gêneros</NavLink>
-        <br/>
-        <NavLink className='HeaderLink' activeClassName='HeaderLinkActive' to='cadastro-livro' end> Cadastro de Livros</NavLink>
-        <br/>
-        <NavLink className='HeaderLink' activeClassName='HeaderLinkActive' to='/cadastro-genero' end> Cadastro de Gênero</NavLink>
+        <NavLink className='HeaderLink' activeClassName='HeaderLinkActive' to='cadastrolivro' end> Cadastro de Livros</NavLink>
         </div>
       </li>
     </ul>

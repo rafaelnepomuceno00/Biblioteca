@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import '../../App.css';
 
 function FormLivros() {
- 
-  const [Generos, setGeneros] = useState([])
+  const [Generos, setGeneros] = useState([]);
   const [NomeLivro, setNomeLivro] = useState('');
   const [Autor, setAutor] = useState('');
   const [GeneroId, setGeneroId] = useState('');
 
   const params = useParams();
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (params.id) {
       async function getLivro() {
         const res = await axios.get(
-          `http://localhost:3000/Livros/${params.id}`,
+          `http://localhost:3000/livros/${params.id}`,
         );
 
         setNomeLivro(res.data.nomeLivro);
@@ -39,15 +38,15 @@ function FormLivros() {
     e.preventDefault();
     try {
       if (!params.id) {
-        await axios.post('http://localhost:3000/Livros', {
+        await axios.post('http://localhost:3000/livros', {
           nomeLivro: NomeLivro,
-          autor:Autor, 
-          generoId:Number(GeneroId)
+          autor: Autor,
+          generoId: Number(GeneroId),
         });
       } else {
-        await axios.put(`http://localhost:3000/Livros/${params.id}`, {
-          nomeLivro:NomeLivro,
-          autor:Autor,
+        await axios.put(`http://localhost:3000/livros/${params.id}`, {
+          nomeLivro: NomeLivro,
+          autor: Autor,
           generoId: Number(GeneroId),
         });
       }
@@ -55,6 +54,7 @@ function FormLivros() {
       setNomeLivro('');
       setAutor('');
       setGeneroId('');
+      alert('Salvo com sucesso');
     } catch (error) {
       alert('Erro ao salvar');
     }
@@ -67,7 +67,7 @@ function FormLivros() {
         <div className="form-group">
           <label htmlFor="nome">Nome</label>
           <input
-          required
+            required
             type="text"
             name="nome"
             id="nome"
@@ -76,11 +76,11 @@ function FormLivros() {
             onChange={(e) => setNomeLivro(e.target.value)}
           />
         </div>
-        
+
         <div className="form-group">
           <label htmlFor="NomeAutor">Autor</label>
           <input
-          required
+            required
             type="text"
             name="NomeAutor"
             id="NomeAutor"
@@ -95,13 +95,10 @@ function FormLivros() {
             name="genero"
             id="genero"
             className="form-control"
-            value={GeneroId}
             onChange={(e) => setGeneroId(e.target.value)}
           >
-            <option   selected>
-            Selecione um Gênero
-            </option>
-            {Generos.map((gnr)=> (
+            <option selected>Selecione um Gênero</option>
+            {Generos.map((gnr) => (
               <option key={gnr.id} value={gnr.id}>
                 {gnr.nome}
               </option>
