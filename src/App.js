@@ -1,20 +1,20 @@
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header';
-import Livros from './Components/Tabelas/Conteudos/Livros';
-import Tabela from './Components/Tabelas/Tabela';
+import AppRoutes from './routes';
 
 function App() {
   return (
     <>
+      <BrowserRouter>
     <Header/>
     <div className=' container background'>
   <div className='center'>
-  <Tabela>
-      <Livros></Livros>
-    </Tabela>
+    <AppRoutes/>
   </div>
 
     </div>
+      </BrowserRouter>
     </>
     );
 }

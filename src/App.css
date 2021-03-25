@@ -1,8 +1,7 @@
-.background{
-}
+
 .tabela{
   color: white;
-  background-color: transparent;
+  background-color: rgba(0.4, 0.4, 0.4, 0.5);
 }
 .THead{
   border-bottom: 2px solid rgba(255, 255, 255, 0.40);
@@ -10,7 +9,7 @@
 }
 .Header{
 
-  background-color: rgba(0.4, 0.4, 0.4, 0.5);
+  background-color: hsla(0, 0%, 0%, 0.5);
 }
 .headerBg{
   background-color: rgba(0.4, 0.4, 0.4, 0.5);
@@ -20,18 +19,100 @@
 }
 
 
-.Header>a{
-  color: rgb(236, 236, 51);
-  background-color: rgba(0.4, 0.4, 0.4, 0.55);
+.centerTable{
+width: 100%;
 }
-
 .center{
  display: flex;
   justify-content: center;
   align-items: center;
-  height: 435px;
 }
 .Carregando{
   display: flex;
   margin-left: 50%;
 }
+.divHeader{
+  text-align: center;
+}
+.HeaderLink:hover{
+  text-decoration: none;
+  color: yellow;  
+}
+.HeaderLink{
+  text-align: center;
+
+}
+.HeaderLinkActive{
+color: yellow;  
+}
+.Home{
+  text-align: center;
+  font-size: 9rem;
+  color: wheat;
+  font-family: 'Bebas Neue', cursive;
+}
+.HomeP{
+  font-family: 'Bebas Neue', cursive;
+  font-size: x-large;
+  color: wheat;
+  text-align: center;
+}
+.btn-1{
+  color: white;
+  background-color: rgba(255, 251, 9, 0.25);
+}
+.btn-1:hover{
+  color: white;
+  background-color: rgba(255, 251, 9, 0.5);
+}
+.btn-2{
+  
+  background-color: rgba(255, 9, 9, 0.25);
+}
+.btn-2:hover{
+  
+  background-color: rgba(255, 9, 9, 0.5);
+}
+.btn-3{
+  
+  background-color: rgba(21, 119, 13, 0.25);
+}
+.btn-3:hover{
+  
+  background-color: rgba(41, 124, 33, 0.5);
+}
+.Form{
+  color: wheat;
+
+}
+.Form input{
+  color:  wheat;
+  background-color: rgba(0.4, 0.4, 0.4, 0.35);
+}
+
+.Form input:focus-visible{
+
+  color:  wheat;
+  background-color: rgba(0.4, 0.4, 0.4, 0.35);
+}
+.Form select{
+
+  color:  wheat;
+  background-color: rgba(0.4, 0.4, 0.4, 0.35);
+}
+
+.Form select:focus-visible{
+
+  color:  wheat;
+  background-color: rgba(0.4, 0.4, 0.4, 0.35);
+}
+
+.Form option{
+  color:  wheat;
+  background-color: rgba(0.4, 0.4, 0.4, 0.35);
+}
+
+.centerButton{
+  text-align: center;
+}
+th,td{text-align: center;}

@@ -1,46 +1,50 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import '../../../App.css'
+import Tabela from '../Tabela'
 
 function Livros() {
     const [Livros, setLivros] = useState([])
+
     useEffect(() => {
         async function getLivros(){
-            const res = await axios.get('http://localhost:3000/livros?_expand=author')
+            const res = await axios.get('http://localhost:3000/livros?_expand=genero')
             setLivros(res.data)
         }
         getLivros()
     }, [])
-
+    
+console.log(Livros);
     if(Livros.length===0){
         return(<div className="d-flex justify-content-center" role="status">
-        <span class="sr-only"></span>
+        <span className="sr-only"></span>
       </div>)
     }
     return (
-        <>
+        <Tabela>
+
         <thead className='THead'>
                <tr >
-                <th className='text-center'>Nome</th>
-                <th className='text-center'>Genero</th>
-                <th className='text-center'>Autor</th>
-                <th className='text-center'>Editar</th>
-                <th className='text-center'>Excluir</th>
+                <th >Nome</th>
+                <th >Genero</th>
+                <th >Autor</th>
+                <th >Editar</th>
+                <th >Excluir</th>
                </tr>
             </thead>
             <tbody className='tabela-corpo'>
          {Livros.map(Livro=>(
-            <tr key={Livro.id}>
-                <td className='text-center'>{Livro.nomeLivro}</td>
-                <td className='text-center'>{Livro.author.genero}</td>
-                <td className='text-center'>{Livro.author.nome}</td>
-                <td className='text-center'><button className='btn btn-warning' >Editar</button></td>
-                <td className='text-center'><button className='btn btn-danger' >Excluir</button></td>
+             <tr key={Livro.id}>
+                <td >{Livro.nomeLivro}</td>
+                <td >{Livro.genero.nome}</td>
+                <td >{Livro.autor}</td>
+                <td ><button className='btn btn-warning btn-1' >Editar</button></td>
+                <td ><button className='btn btn-danger btn-2' >Excluir</button></td>
             </tr>
         ))}
         </tbody>
-        </>
+        </Tabela>
         )
-}
-
+    }
+    
 export default Livros
